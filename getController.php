@@ -1,6 +1,6 @@
 <?php 
 
-$connect = new PDO("mysql:host=localhost;dbname=rexx_systems", "root", "");
+$connect = new PDO("mysql:host=localhost;dbname=rexx_database", "root", "");
 
 
 
