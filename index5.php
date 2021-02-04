@@ -3,7 +3,7 @@
 <html lang="en">
  <head>
   <title>Rexx Coding Test Project</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
@@ -15,7 +15,7 @@
    <h3 align="center">Events List Table</h3>
    <br />
    <div class="table-responsive">
-    <table id="order_data" class="table table-bordered table-striped">
+    <table id="shakowat_zaman" class="table table-bordered table-striped">
      <thead>
       <tr>
         <th>P-ID</th>
@@ -32,7 +32,7 @@
      <tfoot>
       <tr>
        <th colspan="5">Total</th>
-       <th colspan="3" id="total_amounts"></th>
+       <th colspan="3" id="total_amount"></th>
       </tr>
      </tfoot>
     </table>
@@ -47,17 +47,17 @@
 <script type="text/javascript" language="javascript" >
  $(document).ready(function(){
   
-   var dataTable = $('#order_data').DataTable({
+   var dataTable = $('#shakowat_zaman').DataTable({
     "processing" : true,
     "serverSide" : true,
     "participation_fee" : [],
     "ajax" : {
-     url:"fetch.php",
+     url:"getController.php",
      type:"POST"
     },
     drawCallback:function(settings)
     {
-     $('#total_amounts').html(settings.json.total);
+     $('#total_amount').html(settings.json.total);
     }
    });
 
